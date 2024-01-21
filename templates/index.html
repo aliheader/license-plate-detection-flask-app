@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processing App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>License Plate Detection</h1>
+        
+        <form method="post" enctype="multipart/form-data">
+            <label for="image">Choose an image:</label>
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Process Image</button>
+        </form>
+
+        {% if original_image_data %}
+            <h2>Original Image</h2>
+            <img src="data:image/png;base64,{{ original_image_data }}" alt="Original Image">
+        {% endif %}
+
+        {% if processed_image_data %}
+            <h2>License Plate</h2>
+            <img src="data:image/png;base64,{{ processed_image_data }}" alt="Processed Image">
+        {% endif %}
+    </div>
+</body>
+</html>

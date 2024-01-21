@@ -1,0 +1,8 @@
+flask==3.0.0
+pillow==10.2.0
+pandas==2.1.4
+numpy==1.26.3
+tensorflow==2.15.0
+matplotlib==3.8.2
+plotly==5.18.0
+opencv-python==4.9.0.80
